@@ -1,7 +1,13 @@
-const formatData = data => data.map(({value, formattedTime}) => {
+const moment = require('moment');
+const formatData = data => data.map((
+    // data
+    {value, formattedAxisTime, time}
+    ) => {
+    // return data;
     return {
         value: value[0],
-        formattedTime
+        formattedTime: moment(formattedAxisTime).toDate(),
+        time
     }
 });
 module.exports = {
